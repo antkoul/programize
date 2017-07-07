@@ -6,7 +6,8 @@ Created:
 2. Edit a TODO
 3. Delete a TODO
 4. Get all TODOs
-Description:
+
+Execution instructions:
 In postman a new collection and four calls were  added
 1.for the request:
     in the headers section created a new key: 'Content-Type' with value 'application/json'
