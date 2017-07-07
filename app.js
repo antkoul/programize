@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.post('/items', (req, res) => {
-  res.setHeader('Location', 'http://localhost:4040/items/1') 	;
+  res.setHeader('Location', 'http://localhost:4040/items/1');
   res.status(201).send('The TODOs were added.');
 });
 
