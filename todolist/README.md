@@ -24,6 +24,7 @@ In postman a new collection and four calls were  added
     }
 3.
 4.Inserted hardcoded the output in the app.js file
+```
 {
   "items": [
     {
@@ -36,3 +37,4 @@ In postman a new collection and four calls were  added
     }
   ]
 }
+```
