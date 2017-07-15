@@ -49,10 +49,11 @@ app.delete('/items/:id', (req, res) => {
 });
 
 app.get('/items', (req, res) => {
-  todoModel.find({}, function(err, docs) {
+  todoModel.find({}, function(err, todos) {
     if (!err){
+        res.json(todos);
         console.log('200 - The TODOs were returned.');
-        es.status(200);
+        res.status(200);
     } else {throw err;}
   });
 });
