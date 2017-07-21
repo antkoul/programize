@@ -38,7 +38,7 @@ app.post('/items', (req, res) => {
 app.put('/items/:id', (req, res) => {
   todoModel.update({ _id: req.params.id }, { name: req.body.name })
     .then( function(){
-      res.status(204).send('The TODO was updated.');
+      res.status(204).end();
     })
     .catch(function(err) {
       console.log(err);
@@ -50,7 +50,7 @@ app.delete('/items/:id', (req, res) => {
   todoModel.remove({ _id: req.params.id })
     .then( function(){
       console.log('204 - The TODOs were deleted.');
-      res.status(204).send('The TODOs were deleted.');
+      res.status(200).send('The TODOs were deleted.');
     })
     .catch(function(err) {
       console.log(err);
