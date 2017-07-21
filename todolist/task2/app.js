@@ -23,11 +23,9 @@ var todoModel = mongoose.model('todoModel', todoSchema);
 
 
 app.post('/items', (req, res) => {
-  //var addTodo = new todoModel ( req.body );
   var addTodo = new todoModel({ name: req.body.name, completed: false, addedAt: new Date() });
   addTodo.save( function (err, addTodo) {
   if (err) return console.error(err);
-
   res.setHeader('Location', 'http://localhost:4040/items/1');
   res.status(201).send('The TODOs were added.');
   })
@@ -51,7 +49,7 @@ app.delete('/items/:id', (req, res) => {
 app.get('/items', (req, res) => {
   todoModel.find({}, function(err, todos) {
     if (!err){
-        res.json(todos);
+        res.json(todos);  // return all todos in JSON format
         console.log('200 - The TODOs were returned.');
         res.status(200);
     } else {throw err;}
